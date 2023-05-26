@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzaria</title>
+    <!-- Ligação à página CSS -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <!-- Links para os icons funcionarem :) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+        integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css"
+        integrity="sha512-WidMaWaNmZqjk3gDE6KBFCoDpBz9stTsTZZTeocfq/eDNkLfpakEd7qR0bPejvy/x0iT0dvzIq4IirnBtVer5A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+        integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- <div id="scroll-to-top">
+        <a href="#welcome">
+            <i class="fa-solid fa-arrow-up"></i>
+        </a>
+    </div> -->
+
+    <nav>
+        <a class="logo" href="index.html#welcome">
+            VICENZO
+        </a>
+        <ul>
+            <li><a href="index.html#welcome">Home</a></li>
+            <li><a href="index.html#sobrenos">Sobre Nós</a></li>
+            <li><a href="index.html#restaurantes">Restaurantes</a></li>
+            <li><a href="index.html#menu">Menu</a></li>
+            <li><a href="reserva.html">Reservas</a></li>
+            <li><a href="evoucher.html">e-Voucher</a></li>
+            <li><a href="index.html#contactos">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <header id="welcome">
+        <div class="welcome-img">
+            <img src="./assets/IMG/LogotipoFINAL.png" alt="" />
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="sobrenos" style="background-color: #010101;">
+            <!-- <div class="sobrenos-content">
+                <h1>Sobre Nós</h1>
+                <p>Foi em 1974, na cidade de Sorrento, a sul de Itália que a família Vicenzo abriu o seu primeiro restaurante. Anos mais tarde, viram em Portugal um potencial para começar a expandir o seu negócio, inaugurando Vicenzo I, na capital.</p>
+                <p>Hoje em dia, contam com 4 restaurantes somente em Portugal, localizados em Lisboa, Porto e Funchal.</p>
+            </div> -->
+            <h1>Sobre Nós</h1>
+            <div class="flex-wrap">
+                <div class="flex-wrap-child">
+                    <p>Foi em 1974, na cidade de Sorrento, a sul de Itália que a família Vicenzo abriu o seu primeiro restaurante. Anos mais tarde, viram em Portugal um potencial para começar a expandir o seu negócio, inaugurando Vicenzo, na capital.</p>
+                    <p>Hoje em dia, contam com 4 restaurantes somente em Portugal, localizados em Lisboa, Porto e Funchal.</p>
+                </div>
+                <div class="flex-wrap-child">
+                    <img src="./assets/IMG/fundos/sobrenos.jpg" alt="" class="rounded">
+                </div>
+            </div>
+        </section>
+
+        <section id="restaurantes">
+            <h1>Os Nossos Restaurantes</h1>
+            <div id="restaurantes-wrapper">
+                <div class="restaurante" onclick="addClickEventToRestaurante()">
+                    <div class="restaurante-info">
+                        <div class="restaurante-info-line">
+                            <p class="restaurante-titulo">VICENZO</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <p>Restaurante localizado em Belém, caracterizado pela harmonia musical e artística em seu ambiente.</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <div>
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <p class="restaurante-cord">38.69749152604757, -9.19836457062974</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurante" onclick="addClickEventToRestaurante()">
+                    <div class="restaurante-info">
+                        <div class="restaurante-info-line">
+                            <p class="restaurante-titulo">VICENZO Bellagio</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <p>Restaurante localizado no coração da ilha da madeira, com um ambiente tropical e paradisíaco com vista para o mar.</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p class="restaurante-cord">32.64694702236774, -16.89723314702916</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurante" onclick="addClickEventToRestaurante()">
+                    <div class="restaurante-info">
+                        <div class="restaurante-info-line">
+                            <p class="restaurante-titulo">VICENZO Treviso</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <p>Restaurante localizado na ribeira do Porto, relembra as memorias do passado com um ambiente histórico e nostálgico.</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p class="restaurante-cord">41.14059050435171, -8.612020266310845</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="restaurante" onclick="addClickEventToRestaurante()">
+                    <div class="restaurante-info">
+                        <div class="restaurante-info-line">
+                            <p class="restaurante-titulo">VICENZO Salento</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <p>Restaurante localizado nas ruas do Chiado, conhecido pela decoração baseada nas cidades remotas do sul de Itália.</p>
+                        </div>
+                        <div class="restaurante-info-line">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p class="restaurante-cord">38.71033382763659, -9.143723484713014</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="menu">
+            <h1>Menu</h1>
+            <div class="menu-cards-wrapper flex-wrap">
+                <div class="menu-card rounded">
+                    <p>Entradas</p>
+                </div>
+                <div class="menu-card rounded">
+                    <p>Massas</p>
+                </div>
+                <div class="menu-card rounded">
+                    <p>Pizzas</p>
+                </div>
+                <div class="menu-card rounded">
+                    <p>Sobremesas</p>
+                </div>
+            </div>
+            <button type="button" class="btn-download sombra rounded" onclick="openPDF()">
+                <div class="button-text">
+                    Download
+                </div>
+                <div class="button-icon">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        <div id="contactos" class="footer-info">
+            <div class="footer-name">VICENZO</div>
+            <div class="footer-email">apoioaocliente@vicenzo.com</div>
+            <div class="footer-phone-number">+351 968 653 795</div>
+        </div>
+
+        <div id="footer-inline-tabs" class="container flex-wrap">
+            <a href="index.html#welcome">Home</a>
+            <a href="index.html#sobrenos">Sobre Nós</a>
+            <a href="index.html#restaurantes">Restaurantes</a>
+            <a href="index.html#menu">Menu</a>
+            <a href="reserva.html">Reservas</a>
+            <a href="evoucher.html">e-Voucher</a>
+            <a href="index.html#contactos">Contactos</a>
+        </div>
+
+        <div id="footer-social-media" class="flex-wrap">
+            <a class="social-media sombra">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div id="footer-author-rights" class="container">
+            &copy; 2023 VICENZO Rita Vieira & Rodrigo Coelho
+        </div>
+    </footer>
+
+    <!-- Ligação à página JavaScript -->
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>

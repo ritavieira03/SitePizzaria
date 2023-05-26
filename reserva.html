@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserva</title>
+    <!-- Ligação à página CSS -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <!-- Links para os icons funcionarem :) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"
+        integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8ZLF5TB6745ml1AfluEU6dFWqwDw9lPvnauxFgpKvJqp7jiQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css"
+        integrity="sha512-WidMaWaNmZqjk3gDE6KBFCoDpBz9stTsTZZTeocfq/eDNkLfpakEd7qR0bPejvy/x0iT0dvzIq4IirnBtVer5A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
+        integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body onload="reservationTime()">
+    <nav>
+        <a class="logo" href="index.html#welcome">
+            VICENZO
+        </a>
+        <ul>
+            <li><a href="index.html#welcome">Home</a></li>
+            <li><a href="index.html#sobrenos">Sobre Nós</a></li>
+            <li><a href="index.html#restaurantes">Restaurantes</a></li>
+            <li><a href="index.html#menu">Menu</a></li>
+            <li><a href="reserva.html">Reservas</a></li>
+            <li><a href="evoucher.html">e-Voucher</a></li>
+            <li><a href="index.html#contactos">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="reservas">
+            <h1>Reservas</h1>
+            <form action="index.html" autocomplete="off" method="post" id="reserva-form">
+                <div class="input-field">
+                    <label for="restaurante">
+                        Restaurante
+                        <span class="text-colored">*</span>
+                    </label>
+                    <br>
+                    <select class="option-rest" name="restaurant">
+                        <option value="1">VICENZO</option>
+                        <option value="2">VICENZO Bellagio</option>
+                        <option value="3">VICENZO Treviso</option>
+                        <option value="4">VICENZO Salento</option>
+                    </select>
+                </div>
+                <div class="flex-wrap">
+                    <!-- Bloco da esquerda -->
+                    <div class="flex-wrap-child">
+                        <div class="input-field">
+                            <label for="nome">
+                                Nome Completo
+                                <span class="text-colored">*</span>
+                            </label>
+                            <input type="text" name="nome" id="nome" placeholder="John Doe" required autofocus />
+                        </div>
+                        <div class="input-field">
+                            <label for="email">
+                                E-mail
+                                <span class="text-colored">*</span>
+                            </label>
+                            <input type="email" name="email" id="email" placeholder="johndoe@example.com" required />
+                        </div>
+                        <div class="input-field">
+                            <label for="telemovel">
+                                Telemóvel
+                                <span class="text-colored">*</span>
+                            </label>
+                            <input type="tel" name="telemovel" id="telemovel" placeholder="+351 987 654 321" required />
+                        </div>
+                    </div>
+                    <!-- Bloco da direita -->
+                    <div class="flex-wrap-child">
+                        <div class="input-field">
+                            <label for="data">
+                                Data
+                                <span class="text-colored">*</span>
+                            </label>
+                            <input type="date" name="data" id="data" required />
+                        </div>
+                        <div class="input-field">
+                            <label for="hora">
+                                Hora
+                                <span class="text-colored">*</span>
+                            </label>
+                            <select name="hora" id="hora">
+                                <option value="" selected disabled>--:--</option>
+                            </select>
+                        </div>
+                        <div class="input-field">
+                            <label for="pessoas">
+                                Pessoa(s)
+                                <span class="text-colored">*</span>
+                            </label>
+                            <input type="number" name="pessoas" id="pessoas" placeholder="0" min="1" max="10" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="observacoes">Observações</label>
+                    <textarea name="observacoes" id="observacoes" rows="5"></textarea>
+                </div>
+                <div class="form-submit">
+                    <p id="aviso"></p>
+                    <button type="reset" class="btn rounded sombra">Limpar</button>
+                    <button type="submit" class="btn rounded sombra" onclick="reservar()">Reservar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div id="contactos" class="footer-info">
+            <div class="footer-name">VICENZO</div>
+            <div class="footer-email">apoioaocliente@vicenzo.com</div>
+            <div class="footer-phone-number">+351 968 653 795</div>
+        </div>
+
+        <div id="footer-inline-tabs" class="container flex-wrap">
+            <a href="index.html#welcome">Home</a>
+            <a href="index.html#sobrenos">Sobre Nós</a>
+            <a href="index.html#restaurantes">Restaurantes</a>
+            <a href="index.html#menu">Menu</a>
+            <a href="reserva.html">Reservas</a>
+            <a href="evoucher.html">e-Voucher</a>
+            <a href="index.html#contactos">Contactos</a>
+        </div>
+
+        <div id="footer-social-media" class="flex-wrap">
+            <a class="social-media sombra">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a class="social-media sombra">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div id="footer-author-rights" class="container">
+            &copy; 2023 VICENZO Rita Vieira & Rodrigo Coelho
+        </div>
+    </footer>
+
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>
