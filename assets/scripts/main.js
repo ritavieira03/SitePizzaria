@@ -1,7 +1,19 @@
+// Navbar Responsiva
+const icon =document.getElementById("icon")
+
+function openTopNav() {
+    const nav = document.getElementsById("topnav");
+    nav.classList.toggle("active");
+}
+
+icon.addEventListener("click", openTopNav);
+
+// Abrir o pdf do Menu
 function openPDF() {
     window.open('./assets/VICENZOmenu.pdf', '_blank');
 }
 
+// Restaurantes
 function addClickEventToRestaurante() {
     // Get all the restaurant elements
     const restaurantes = document.getElementsByClassName('restaurante');
@@ -23,9 +35,6 @@ function addClickEventToRestaurante() {
         });
     }
 }
-
-/// Call the function to add click event to restaurantes
-addClickEventToRestaurante();
 
 // Função para renderizar os vouchers
 function renderVouchers() {
