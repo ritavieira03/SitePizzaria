@@ -180,7 +180,7 @@ section h1 {
     gap: 1rem;
 }
 
-#aviso {
+.aviso {
     color: rgb(154, 44, 44);
     font-size: 1rem;
     display: none;

@@ -75,8 +75,8 @@
                                 Nome Completo
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="text" name="nome" id="nome" placeholder="John Doe" required autofocus />
-                            <p id="aviso">Nome Completo não válido</p>
+                            <input type="text" name="nome" id="nome" placeholder="John Doe" oninput="validarNome()" class= "required"/>
+                            <p class="aviso">Nome Completo não válido</p>
                         </div>
                         <div class="input-field">
                             <label for="email">
@@ -84,7 +84,7 @@
                                 <span class="text-colored">*</span>
                             </label>
                             <input type="email" name="email" id="email" placeholder="johndoe@example.com" required />
-                            <p id="aviso">Email não válido</p>
+                            <p class="aviso">Email não válido</p>
                         </div>
                         <div class="input-field">
                             <label for="telemovel">
@@ -92,7 +92,7 @@
                                 <span class="text-colored">*</span>
                             </label>
                             <input type="tel" name="telemovel" id="telemovel" placeholder="+351 987 654 321" required />
-                            <p id="aviso">Telemóvel não válido</p>
+                            <p class="aviso">Telemóvel não válido</p>
                         </div>
                     </div>
                     <!-- Bloco da direita -->
@@ -127,9 +127,9 @@
                     <textarea name="observacoes" id="observacoes" rows="5"></textarea>
                 </div>
                 <div class="form-submit">
-                    <p id="aviso">Existem campos vazios</p>
+                    <p class="aviso">Existem campos vazios</p>
                     <button type="reset" class="btn rounded sombra">Limpar</button>
-                    <button type="submit" class="btn rounded sombra" onclick="reservar()">Reservar</button>
+                    <button type="submit" class="btn rounded sombra">Reservar</button>
                 </div>
             </form>
         </section>

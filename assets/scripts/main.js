@@ -110,94 +110,9 @@ function controllerVoucherDest() {
 }
 
 // FORMULÁRIOS
-// Função para validar o Formulário
-/* function validateForm() {
-    let radios = document.querySelectorAll('.voucher-radio-input');
-    console.log(radios);
-    return;
-}
-
-// Receber o elemento do formulário
-const reservasForm = document.getElementById('reservas-form');
-
-// EventListener para o form quando é submetido
-reservasForm.addEventListener('submit', function(event) {
-    // Prevenir o formulário de ser submetido antes de ser validado
-    event.preventDefault();
-
-    // Buscar elementos a serem validados
-    let nome = document.getElementById("nome").value;
-    let email = document.getElementById("email").value;
-    let tel = document.getElementById("telemovel").value;
-    let data = document.getElementById("data").value;
-    let hora = document.getElementById("hora").value;
-    let pessoas = document.getElementById("pessoas").value;
-
-    // Validar nome
-    if(nome.trim() == "") {
-        displayError("O campo \"Nome Completo\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-
-    // Validar email
-    if(email.trim() == "") {
-        displayError("O campo \"Email\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-
-    // Validar tel
-    if(tel.trim() == "") {
-        displayError("O campo \"Telemóvel\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-
-    // Validar data
-    if(data.trim() == "") {
-        displayError("O campo \"Data\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-
-    // Validar hora
-    if(hora.trim() == "") {
-        displayError("O campo \"Hora\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-
-    // Validar pessoas
-    if(pessoas.trim() == "") {
-        displayError("O campo \"Pessoa(s)\" não pode estar vazio");
-    } else {
-        hideError();
-    }
-});
-
-// Função para renderizar o erro
-function displayError(index) {
-    // Buscar o elemento para mostrar o erro
-    let errorElement = document.getElementById('aviso');
-    if(errorElement.innerText.length == 0) {
-        errorElement.innerText += errorMessage;
-    } else {
-        errorElement.innerText += ", " + errorMessage;
-    }
-
-}
-
-// Função para esconder o erro
-function hideError() {
-    let errorElement = document.getElementById('aviso');
-    errorElement.innerText = "";
-} */
-
-// Rita
 const formreservas = document.getElementsById("reservas-form")
 const campos = document.querySelectorAll(".required")
-const avisos = document.querySelectorAll("aviso")
+const avisos = document.querySelectorAll(".aviso")
 
 function setError(index) {
     campos[index].style.border = "rgb(154, 44, 44)";
@@ -210,7 +125,12 @@ function removeError(index) {
 }
 
 function validarNome() {
-    if (campos[0].value.trim == Number) {setError[0]}
-    /* elif (campos[0].value.trim == "") {setError[0]} */
-    else {removeError[0]}
+    if (campos[0].value.length < 3)
+    {
+        console.log("if");
+    }
+    else
+    {
+        console.log("else");
+    }
 }
