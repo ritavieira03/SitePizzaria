@@ -110,27 +110,49 @@ function controllerVoucherDest() {
 }
 
 // FORMULÁRIOS
-const formreservas = document.getElementsById("reservas-form")
-const campos = document.querySelectorAll(".required")
-const avisos = document.querySelectorAll(".aviso")
+const formreservas = document.getElementById("reservas-form");
+const campos = document.querySelectorAll(".required");
+const avisos = document.querySelectorAll(".aviso");
+const emailrestricao = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+const telrestricao = /^(9[1236]\d{7}|2\d{8})$/;
 
 function setError(index) {
-    campos[index].style.border = "rgb(154, 44, 44)";
     avisos[index].style.display = "block";
 }
 
 function removeError(index) {
-    campos[index].style.border = "";
     avisos[index].style.display = "none";
 }
 
 function validarNome() {
     if (campos[0].value.length < 3)
     {
-        console.log("if");
+        setError(0);
     }
     else
     {
-        console.log("else");
+        removeError(0);
+    }
+}
+
+function validarEmail() {
+    if (!emailrestricao.test(campos[1].value))
+    {
+        setError(1);
+    }
+    else
+    {
+        removeError(1);
+    }
+}
+
+function validarTelemovel() {
+    if (!telrestricao.test(campos[2].value))
+    {
+        setError(2);
+    }
+    else
+    {
+        removeError(2);
     }
 }
