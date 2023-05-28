@@ -1,6 +1,6 @@
 // Navbar Responsiva
 function openNav() {
-    document.getElementById("nav").style.width = "30%";
+    document.getElementById("nav").style.width = "40%";
 }
 
 function closeNav() {
@@ -12,7 +12,8 @@ function openPDF() {
     window.open('./assets/VICENZOmenu.pdf', '_blank');
 }
 
-// Restaurantes
+
+// RESTAURANTES
 function addClickEventToRestaurante() {
     // Get all the restaurant elements
     const restaurantes = document.getElementsByClassName('restaurante');
@@ -35,12 +36,30 @@ function addClickEventToRestaurante() {
     }
 }
 
-// Função para renderizar os vouchers
+// RESERVAS
+// Função para renderizar as opções de horas e minutos
+function reservationTime() {
+    let select = document.getElementById('hora');
+
+    for(let i = 11; i <= 22; i++) {
+        if((11 <= i && i <= 14) || (19 <= i && i <= 22)) {
+            for(let j = 0; j <= 30; j += 30) {
+                let newOption = document.createElement('option');
+                newOption.setAttribute('value', `${i}:${j == 0 ? '00' : j}`);
+                newOption.innerText = `${i}:${j == 0 ? '00' : j}`;
+    
+                select.appendChild(newOption);
+            }
+        }
+    }
+}
+
+// E-VOUCHERS
 function renderVouchers() {
     // Valores dos vouchers
     let values = [50, 75, 100, 125, 150, 200, 300];
 
-    // Buscar o container dos vouchers
+    // Buscar o container dos e-vouchers
     let container = document.getElementById('voucher-wrapper');
 
     for(let i = 0; i < values.length; i++) {
@@ -58,14 +77,13 @@ function renderVouchers() {
         newLabel.setAttribute('for', `voucher-${values[i]}`);
         newLabel.setAttribute('class', 'voucher-radio-label rounded');
         newLabel.innerText = `${values[i]}€`;
-
+        
         // Adiciona a label ao container
         container.appendChild(newLabel);
     }
 }
 
-// Função para trocar a visibilidade do destinatário
-// e adicionar o atributo required ao input
+// Função para trocar a visibilidade do destinatário e adicionar o atributo required ao input
 function controllerVoucherDest() {
     // Buscar a checkbox
     let input = document.getElementById('oferta');
@@ -91,26 +109,13 @@ function controllerVoucherDest() {
     }
 }
 
+// FORMULÁRIOS
 // Função para validar o Formulário
-function validateForm() {
+/* function validateForm() {
     let radios = document.querySelectorAll('.voucher-radio-input');
     console.log(radios);
     return;
 }
-
-// Função para verificar os campos
-// function reservar() {
-//     var nome = document.getElementById("nome").value;
-//     var email = document.getElementById("email").value;
-//     var tel = document.getElementById("telemovel").value;
-//     var data = document.getElementById("data").value;
-//     var hora = document.getElementById("hora").value;
-//     var pessoas = document.getElementById("pessoas").value;
-
-//     if (nome == "" || email == "" || tel == "" || data == "" || hora == "" || pessoas == "") {
-//         document.getElementById("aviso").innerHTML = "Existem campos vazios!";
-//     }
-// }
 
 // Receber o elemento do formulário
 const reservasForm = document.getElementById('reservas-form');
@@ -172,7 +177,7 @@ reservasForm.addEventListener('submit', function(event) {
 });
 
 // Função para renderizar o erro
-function displayError(errorMessage) {
+function displayError(index) {
     // Buscar o elemento para mostrar o erro
     let errorElement = document.getElementById('aviso');
     if(errorElement.innerText.length == 0) {
@@ -180,27 +185,32 @@ function displayError(errorMessage) {
     } else {
         errorElement.innerText += ", " + errorMessage;
     }
+
 }
 
 // Função para esconder o erro
 function hideError() {
     let errorElement = document.getElementById('aviso');
     errorElement.innerText = "";
+} */
+
+// Rita
+const formreservas = document.getElementsById("reservas-form")
+const campos = document.querySelectorAll(".required")
+const avisos = document.querySelectorAll("aviso")
+
+function setError(index) {
+    campos[index].style.border = "rgb(154, 44, 44)";
+    avisos[index].style.display = "block";
 }
 
-// Função para renderizar as opções de horas e minutos para as opções
-function reservationTime() {
-    let select = document.getElementById('hora');
+function removeError(index) {
+    campos[index].style.border = "";
+    avisos[index].style.display = "none";
+}
 
-    for(let i = 11; i <= 22; i++) {
-        if((11 <= i && i <= 14) || (19 <= i && i <= 22)) {
-            for(let j = 0; j <= 30; j += 30) {
-                let newOption = document.createElement('option');
-                newOption.setAttribute('value', `${i}:${j == 0 ? '00' : j}`);
-                newOption.innerText = `${i}:${j == 0 ? '00' : j}`;
-    
-                select.appendChild(newOption);
-            }
-        }
-    }
+function validarNome() {
+    if (campos[0].value.trim == Number) {setError[0]}
+    /* elif (campos[0].value.trim == "") {setError[0]} */
+    else {removeError[0]}
 }

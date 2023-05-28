@@ -31,21 +31,29 @@
         <a class="logo" href="index.html#welcome">
             VICENZO
         </a>
-        <ul>
-            <li><a href="index.html#welcome">Home</a></li>
-            <li><a href="index.html#sobrenos">Sobre Nós</a></li>
-            <li><a href="index.html#restaurantes">Restaurantes</a></li>
-            <li><a href="index.html#menu">Menu</a></li>
-            <li><a href="reserva.html">Reservas</a></li>
-            <li><a href="evoucher.html">e-Voucher</a></li>
-            <li><a href="index.html#contactos">Contactos</a></li>
-        </ul>
+        <div class="nav-list" id="nav">
+            <button id="closeIcon" onclick="closeNav()">
+                <i class="fa-solid fa-x"></i>
+            </button>
+            <ul>
+                <li><a href="index.html#welcome">Home</a></li>
+                <li><a href="index.html#sobrenos">Sobre Nós</a></li>
+                <li><a href="index.html#restaurantes">Restaurantes</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="reserva.html">Reservas</a></li>
+                <li><a href="evoucher.html">e-Voucher</a></li>
+                <li><a href="index.html#contactos">Contactos</a></li>
+            </ul>
+        </div>
+        <button id="openIcon" onclick="openNav()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </nav>
 
     <main class="container">
         <section id="reservas">
             <h1>Reservas</h1>
-            <form action="index.html" autocomplete="off" method="post" id="reserva-form">
+            <form action="index.html" autocomplete="off" method="post" id="reservas-form">
                 <div class="input-field">
                     <label for="restaurante">
                         Restaurante
@@ -68,6 +76,7 @@
                                 <span class="text-colored">*</span>
                             </label>
                             <input type="text" name="nome" id="nome" placeholder="John Doe" required autofocus />
+                            <p id="aviso">Nome Completo não válido</p>
                         </div>
                         <div class="input-field">
                             <label for="email">
@@ -75,6 +84,7 @@
                                 <span class="text-colored">*</span>
                             </label>
                             <input type="email" name="email" id="email" placeholder="johndoe@example.com" required />
+                            <p id="aviso">Email não válido</p>
                         </div>
                         <div class="input-field">
                             <label for="telemovel">
@@ -82,6 +92,7 @@
                                 <span class="text-colored">*</span>
                             </label>
                             <input type="tel" name="telemovel" id="telemovel" placeholder="+351 987 654 321" required />
+                            <p id="aviso">Telemóvel não válido</p>
                         </div>
                     </div>
                     <!-- Bloco da direita -->
@@ -116,7 +127,7 @@
                     <textarea name="observacoes" id="observacoes" rows="5"></textarea>
                 </div>
                 <div class="form-submit">
-                    <p id="aviso"></p>
+                    <p id="aviso">Existem campos vazios</p>
                     <button type="reset" class="btn rounded sombra">Limpar</button>
                     <button type="submit" class="btn rounded sombra" onclick="reservar()">Reservar</button>
                 </div>

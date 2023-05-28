@@ -181,17 +181,17 @@ section h1 {
 }
 
 #aviso {
-    color: rgb(230, 55, 55);
-    font-style: italic;
+    color: rgb(154, 44, 44);
+    font-size: 1rem;
+    display: none;
 }
 /* Classes Utilitárias fim */
 
-/* Barra de navegação */
+/* BARRA DE NAVEGAÇÃO */
 nav {
     width: 100%;
     position: fixed;
-    z-index: 100;
-    /* Colocar a nav por cima de todos os elementos do website */
+    z-index: 100; /* Colocar a nav por cima de todos os elementos do website */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -212,6 +212,7 @@ nav ul {
 }
 
 #openIcon {display: none}
+
 #closeIcon {display: none}
 
 @media (max-width: 769px) {
@@ -228,7 +229,7 @@ nav ul {
         height: 100%;
         padding-top: 2.5rem;
         background: var(--primary-clr-800);
-        z-index: 10;
+        z-index: 100;
         position: fixed;
         top: 0;
         right: 0;
@@ -257,9 +258,9 @@ nav ul {
 
 }
 
-/* Primeira secção */
-/* Background */
+/* SECÇÃO DE ENTRADA */
 
+/* Background */
 #welcome {
     height: 100vh;
     background: linear-gradient(180deg,
@@ -285,7 +286,7 @@ nav ul {
 
 .logo:hover, .logo:focus {text-decoration: none}
 
-/* Sobre Nós */
+/* SOBRE NÓS */
 #sobrenos {
     background-color: var(--primary-clr-900);
     color: var(--text-color);
@@ -296,12 +297,23 @@ nav ul {
     text-align: justify;
 }
 
-#sobrenos p { text-align: justify; }
-#sobrenos img { max-width: 500px; }
-#sobrenos :last-child { margin: 0 auto; }
-#sobrenos .flex-wrap { align-items: center; justify-content: center; gap: 2rem; }
+#sobrenos p { text-align: justify}
 
-/* Restaurantes */
+#sobrenos img { max-width: 500px}
+
+@media (max-width: 769px) {
+    #sobrenos img { max-width: 100%}
+}
+
+#sobrenos :last-child { margin: 0 auto}
+
+#sobrenos .flex-wrap {
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* RESTAURANTES */
 #restaurantes-wrapper {
     display: grid;
     /* duas colunas iguais */
@@ -309,7 +321,6 @@ nav ul {
     /* duas linhas iguais */
     grid-template-rows: 1fr 1fr;
     background-position: center center;
-    /* gap: .5rem; */
 }
 
 @media (max-width: 768px) {
@@ -383,7 +394,7 @@ nav ul {
     }
 }
 
-/* Menu */
+/* MENU */
 .menu-cards-wrapper {margin-block: 3rem}
 
 .menu-card {
@@ -442,7 +453,7 @@ nav ul {
     border-color: var(--primary-clr-800);
 }
 
-/* Reservas */
+/* RESERVAS*/
 #reservas {
     margin-top: 5rem;
     background-color: var(--primary-clr-800);
@@ -460,7 +471,7 @@ nav ul {
 
 .option-rest {width: auto}
 
-/* e-Voucher */
+/* E-VOUCHER */
 #evoucher {
     margin-top: 5rem;
     background-color: var(--primary-clr-800);
@@ -510,7 +521,7 @@ nav ul {
     color: var(--primary-clr-900);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     background-color: var(--primary-clr-800);
     color: var(--text-color);
