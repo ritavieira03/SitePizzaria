@@ -211,38 +211,50 @@ nav ul {
     font-weight: 500;
 }
 
-#icon {
-    display: none;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: var(--title-color);
-    border: transparent;
-}
+#openIcon {display: none}
+#closeIcon {display: none}
 
-@media (max-width: 768px) {
-    #nav-list {
-        position: absolute;
+@media (max-width: 769px) {
+    #openIcon {
+        display: block;
+        font-size: 1.5rem;
+        background-color: transparent;
+        color: var(--title-color);
+        border: transparent;
+    }
+
+    .nav-list {
+        width: 0;
+        height: 100%;
+        padding-top: 2.5rem;
+        background: var(--primary-clr-800);
+        z-index: 10;
+        position: fixed;
         top: 0;
         right: 0;
-        width: 100%;
-        height: 100vh;
-        background: var(--primary-clr-800);
+        overflow-x: hidden;
+        transition: all 0.5s;   
+    }
+
+    nav ul {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        gap: 1rem;
+        font-weight: 500;
     }
 
-    #nav-list ul {
-        opacity: 0;
-    }
-
-    #icon {
+    #closeIcon {
         display: block;
+        position: absolute;
+        top: .25rem;
+        right: .25rem;
+        font-size: 1.5rem;
+        background-color: transparent;
+        color: var(--title-color);
+        border: transparent;
     }
 
-    #topnav.active #nav-list {
-        display: block;
-    }
 }
 
 /* Primeira secção */

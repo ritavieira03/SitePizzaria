@@ -1,12 +1,11 @@
 // Navbar Responsiva
-const icon =document.getElementById("icon")
-
-function openTopNav() {
-    const nav = document.getElementsById("topnav");
-    nav.classList.toggle("active");
+function openNav() {
+    document.getElementById("nav").style.width = "30%";
 }
 
-icon.addEventListener("click", openTopNav);
+function closeNav() {
+    document.getElementById("nav").style.width = "0";
+}
 
 // Abrir o pdf do Menu
 function openPDF() {

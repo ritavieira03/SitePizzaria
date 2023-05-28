@@ -27,11 +27,14 @@
 </head>
 
 <body>
-    <nav class="nav">
+    <nav>
         <a class="logo" href="index.html#welcome">
             VICENZO
         </a>
-        <div id="nav-list">
+        <div class="nav-list" id="nav">
+            <button id="closeIcon" onclick="closeNav()">
+                <i class="fa-solid fa-x"></i>
+            </button>
             <ul>
                 <li><a href="index.html#welcome">Home</a></li>
                 <li><a href="index.html#sobrenos">Sobre Nós</a></li>
@@ -42,7 +45,7 @@
                 <li><a href="index.html#contactos">Contactos</a></li>
             </ul>
         </div>
-        <button type="button" id="icon">
+        <button id="openIcon" onclick="openNav()">
             <i class="fa-solid fa-bars"></i>
         </button>
     </nav>
