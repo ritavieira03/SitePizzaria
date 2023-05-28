@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>e-Voucher</title>
-    <!-- Ligação à página CSS -->
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <!-- Links para os icons funcionarem :) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -53,31 +52,34 @@
     <main class="container">
         <section id="evoucher">
             <h1>e-Voucher</h1>
-            <form action="index.html" autocomplete="off" method="post">
+            <form action="index.html" autocomplete="off" method="post" id="evouchers-form">
                 <div class="input-field">
                     <label for="nome">
                         Nome
                         <span class="text-colored">*</span>
                     </label>
-                    <input type="text" name="nome" id="nome" placeholder="John Doe" required autofocus />
+                    <input type="text" name="nome" id="nome" placeholder="John Doe" class="valida" required oninput="validarNome()"/>
+                    <p class="aviso">Nome Completo não válido</p>
                 </div>
                 <div class="input-field">
                     <label for="email">
                         E-mail
                         <span class="text-colored">*</span>
                     </label>
-                    <input type="email" name="email" id="email" placeholder="johndoe@example.com" required />
+                    <input type="email" name="email" id="email" placeholder="johndoe@example.com" class="valida" required oninput="validarEmail()"/>
+                    <p class="aviso">Email não válido</p>
                 </div>
                 <div class="input-field">
                     <label for="telefone">
                         Telefone
                     </label>
-                    <input type="tel" name="telefone" id="telefone" placeholder="+351 987 654 321"/>
+                    <input type="tel" name="telefone" id="telefone" placeholder="+351 987 654 321" class="valida" oninput="validarTelemovel()"/>
+                    <p class="aviso">Telemóvel não válido</p>
                 </div>
                 <div class="input-field flex-wrap" id="evoucher-dest">
                     <div class="flex-wrap-child">
                         <input type="checkbox" id="oferta" name="oferta" onchange="controllerVoucherDest()">
-                        <label for="oferta2">Para ofercer</label>
+                        <label for="oferta">Para ofercer</label>
                     </div>
                 </div>
                 <!-- Secção dos radios para os Vouchers -->
@@ -89,15 +91,16 @@
                         Destinatário
                         <span class="text-colored">*</span>
                     </label>
-                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe">
+                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe" class="valida">
                 </div>
                 <div class="input-field hidden" id="msg_dest_div">
                     <label for="msg_dest">Mensagem</label>
                     <textarea name="msg_dest" id="msg_dest" rows="5" placeholder="Escreva aqui a sua mensagem"></textarea>
                 </div>
+                <p class="aviso">Existem campos vazios</p>
                 <div class="form-submit">
                     <button type="reset" class="btn rounded sombra">Limpar</button>
-                    <button type="submit" class="btn rounded sombra" onsubmit="validateForm()">Criar e-voucher</button>
+                    <button class="btn rounded sombra" onclick="validarVoucher()">Criar e-voucher</button>
                 </div>
             </form>
         </section>

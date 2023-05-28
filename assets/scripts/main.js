@@ -111,7 +111,8 @@ function controllerVoucherDest() {
 
 // FORMULÁRIOS
 const formreservas = document.getElementById("reservas-form");
-const campos = document.querySelectorAll(".required");
+const formevouchers = document.getElementById("evouchers-form");
+const campos = document.querySelectorAll(".valida");
 const avisos = document.querySelectorAll(".aviso");
 const emailrestricao = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 const telrestricao = /^(9[1236]\d{7}|2\d{8})$/;
@@ -125,34 +126,36 @@ function removeError(index) {
 }
 
 function validarNome() {
-    if (campos[0].value.length < 3)
-    {
+    if (campos[0].value.length < 3) {
         setError(0);
     }
-    else
-    {
+    else {
         removeError(0);
     }
 }
 
 function validarEmail() {
-    if (!emailrestricao.test(campos[1].value))
-    {
+    if (!emailrestricao.test(campos[1].value)) {
         setError(1);
     }
-    else
-    {
+    else {
         removeError(1);
     }
 }
 
 function validarTelemovel() {
-    if (!telrestricao.test(campos[2].value))
-    {
+    if (!telrestricao.test(campos[2].value)) {
         setError(2);
     }
-    else
-    {
+    else {
         removeError(2);
     }
+}
+
+function validarReserva() {
+    alert("Reserva concluída!")
+}
+
+function validarVoucher() {
+    alert("e-Voucher criado!")
 }

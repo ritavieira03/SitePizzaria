@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserva</title>
-    <!-- Ligação à página CSS -->
     <link rel="stylesheet" href="./assets/styles/main.css" />
     <!-- Links para os icons funcionarem :) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -75,7 +74,7 @@
                                 Nome Completo
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="text" name="nome" id="nome" placeholder="John Doe" class= "required" oninput="validarNome()"/>
+                            <input type="text" name="nome" id="nome" placeholder="John Doe" class= "valida" required oninput="validarNome()"/>
                             <p class="aviso">Nome Completo não válido</p>
                         </div>
                         <div class="input-field">
@@ -83,7 +82,7 @@
                                 E-mail
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="email" name="email" id="email" placeholder="johndoe@example.com" class= "required" oninput="validarEmail()"/>
+                            <input type="email" name="email" id="email" placeholder="johndoe@example.com" class= "valida" required oninput="validarEmail()"/>
                             <p class="aviso">Email não válido</p>
                         </div>
                         <div class="input-field">
@@ -91,7 +90,7 @@
                                 Telemóvel
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="tel" name="telemovel" id="telemovel" placeholder="+351 987 654 321" class= "required" oninput="validarTelemovel()"/>
+                            <input type="tel" name="telemovel" id="telemovel" placeholder="+351 987 654 321" class= "valida" required oninput="validarTelemovel()"/>
                             <p class="aviso">Telemóvel não válido</p>
                         </div>
                     </div>
@@ -102,14 +101,14 @@
                                 Data
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="date" name="data" id="data" required />
+                            <input type="date" name="data" id="data" class="valida" required />
                         </div>
                         <div class="input-field">
                             <label for="hora">
                                 Hora
                                 <span class="text-colored">*</span>
                             </label>
-                            <select name="hora" id="hora">
+                            <select name="hora" id="hora" class="valida" required>
                                 <option value="" selected disabled>--:--</option>
                             </select>
                         </div>
@@ -118,7 +117,7 @@
                                 Pessoa(s)
                                 <span class="text-colored">*</span>
                             </label>
-                            <input type="number" name="pessoas" id="pessoas" placeholder="0" min="1" max="10" required />
+                            <input type="number" name="pessoas" id="pessoas" placeholder="0" min="1" max="10" class="valida" required />
                         </div>
                     </div>
                 </div>
@@ -127,9 +126,8 @@
                     <textarea name="observacoes" id="observacoes" rows="5"></textarea>
                 </div>
                 <div class="form-submit">
-                    <p class="aviso">Existem campos vazios</p>
                     <button type="reset" class="btn rounded sombra">Limpar</button>
-                    <button type="submit" class="btn rounded sombra">Reservar</button>
+                    <button class="btn rounded sombra" onclick="validarReserva()">Reservar</button>
                 </div>
             </form>
         </section>
