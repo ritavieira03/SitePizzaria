@@ -91,7 +91,7 @@
                         Destinatário
                         <span class="text-colored">*</span>
                     </label>
-                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe" class="valida" oninput="validarNome()">
+                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe" class="valida" oninput="validarNomeDest()">
                     <p class="aviso">Nome Completo não válido</p>
                 </div>
                 <div class="input-field hidden" id="msg_dest_div">
@@ -100,7 +100,7 @@
                 </div>
                 <div class="form-submit">
                     <button type="reset" class="btn rounded sombra">Limpar</button>
-                    <button class="btn rounded sombra" onclick="validarVoucher()">Criar e-voucher</button>
+                    <button class="btn rounded sombra" onsubmit="validarVoucher()">Criar e-voucher</button>
                 </div>
             </form>
         </section>
