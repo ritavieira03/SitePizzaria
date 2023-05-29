@@ -91,13 +91,13 @@
                         Destinatário
                         <span class="text-colored">*</span>
                     </label>
-                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe" class="valida">
+                    <input type="text" name="nome_dest" id="nome_dest" placeholder="John Doe" class="valida" oninput="validarNome()">
+                    <p class="aviso">Nome Completo não válido</p>
                 </div>
                 <div class="input-field hidden" id="msg_dest_div">
                     <label for="msg_dest">Mensagem</label>
                     <textarea name="msg_dest" id="msg_dest" rows="5" placeholder="Escreva aqui a sua mensagem"></textarea>
                 </div>
-                <p class="aviso">Existem campos vazios</p>
                 <div class="form-submit">
                     <button type="reset" class="btn rounded sombra">Limpar</button>
                     <button class="btn rounded sombra" onclick="validarVoucher()">Criar e-voucher</button>

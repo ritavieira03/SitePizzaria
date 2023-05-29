@@ -113,6 +113,7 @@ function controllerVoucherDest() {
 const formreservas = document.getElementById("reservas-form");
 const formevouchers = document.getElementById("evouchers-form");
 const campos = document.querySelectorAll(".valida");
+const nomedest = document.getElementById("nome-dest")
 const avisos = document.querySelectorAll(".aviso");
 const emailrestricao = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 const telrestricao = /^(9[1236]\d{7}|2\d{8})$/;
@@ -129,8 +130,18 @@ function validarNome() {
     if (campos[0].value.length < 3) {
         setError(0);
     }
+    else if (campos[0].value.match(/[0-9]/)) {
+        setError(0);
+    }
+    if (campos[3].value.length < 3) {
+        setError(3);
+    }
+    else if (campos[3].value.match(/[0-9]/)) {
+        setError(3);
+    }
     else {
         removeError(0);
+        removeError(3);
     }
 }
 
